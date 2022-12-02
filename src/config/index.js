@@ -1,6 +1,6 @@
 module.exports = {
   appName: 'Backend Starter',
-  port: process.env.PORT || 5000,
+  port: process.env.PORT || 5432,
 
   // Create new random token whenever you start a new project
   tokenSecret: process.env.TOKEN_SECRET || 'reughdjsasdkpmasipkmsdfadf',

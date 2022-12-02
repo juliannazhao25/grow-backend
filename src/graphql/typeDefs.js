@@ -11,30 +11,39 @@ scalar PhoneNumber
 
 type Query {
     user(id: ID!): User!
+    lawsByUserId(userId: ID!): [Law]!
+    goalsByUserId(userId: ID!): [Goal]!
+    habitsByUserId(userId: ID!): [Habit]!
+    logByHabitId(habitId: ID!): HabitDetails!
+    logsByUserId(userId: ID!): [HabitDetails]!
   }
 
   type Mutation {
-    login(email: EmailAddress!, password: String!): Viewer!
+    login(username: String!, password: String!): Viewer!
     register(input: RegisterInput!): Viewer!
+    addGoal(userId: ID!, goal: String!, reward: String!, punishment: String!, vermin1: String!, vermin2: String, vermin3: String, vermin4: String, vermin5: String!): ID!
+    addLaw(userId: ID!, goal: String!, punishment: String!, reward: String!): ID!
+    addHabit(userId: ID!, habit: String!): ID!
+    addHabitLog(habitId: ID!, date: Date!): ID!
   }
 
   interface UserTraits {
     id: ID!
-    email: EmailAddress!
+    username: String!
     createdAt: DateTime!
     updatedAt: DateTime!
   }
 
   type User implements UserTraits {
     id: ID!
-    email: EmailAddress!
+    username: String!
     createdAt: DateTime!
     updatedAt: DateTime!
   }
 
   type Viewer implements UserTraits {
     id: ID!
-    email: EmailAddress!
+    username: String!
     createdAt: DateTime!
     updatedAt: DateTime!
   }
@@ -45,7 +54,50 @@ type Query {
   }
 
   input RegisterInput {
-    email: EmailAddress!
+    username: String!
     password: String!
+    firstName: String!
+  }
+
+  type Law {
+    id: ID!
+    userId: ID!
+    law: String!
+    punishment: String!
+    reward: String
+    createdAt: DateTime!
+    updatedAt: DateTime!
+  }
+
+  type Goal {
+    id: ID!
+    userId: ID!
+    goal: String!
+    reward: String!
+    punishment: String!
+    vermin1: String!
+    vermin2: String
+    vermin3: String
+    vermin4: String
+    vermin5: String
+    createdAt: DateTime!
+    updatedAt: DateTime!
+  }
+
+  type Habit {
+    id: ID!
+    userId: ID!
+    habit: String!
+    createdAt: DateTime!
+    updatedAt: DateTime!
+  }
+
+  type HabitDetails {
+    habitId: ID!
+    habit: String!
+    totalDays: Int!
+    successDays: Int!
+    streak: Int!
+    lastMonth: [Date]!
   }
 `
