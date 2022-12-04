@@ -3,10 +3,10 @@ const HabitLog = require('../../models/HabitLog')
 
 // eslint-disable-next-line max-len
 const addHabit = async (obj, {
-  userId, habit,
+  userId, habit, description,
 }) => {
   const added = Habits.query().insert({
-    userId, habit,
+    userId, habit, description,
   })
   return added.id
 }

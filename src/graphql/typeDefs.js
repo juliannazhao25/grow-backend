@@ -21,9 +21,9 @@ type Query {
   type Mutation {
     login(username: String!, password: String!): Viewer!
     register(input: RegisterInput!): Viewer!
-    addGoal(userId: ID!, goal: String!, reward: String!, punishment: String!, vermin1: String!, vermin2: String, vermin3: String, vermin4: String, vermin5: String!): ID!
-    addLaw(userId: ID!, goal: String!, punishment: String!, reward: String!): ID!
-    addHabit(userId: ID!, habit: String!): ID!
+    addGoal(userId: ID!, goal: String!, reward: String!, punishment: String!, vermin1: String!, vermin2: String, vermin3: String, vermin4: String, vermin5: String): ID!
+    addLaw(userId: ID!, law: String!, punishment: String!, reward: String): ID!
+    addHabit(userId: ID!, habit: String!, description: String): ID!
     addHabitLog(habitId: ID!, date: Date!): ID!
   }
 
@@ -88,6 +88,7 @@ type Query {
     id: ID!
     userId: ID!
     habit: String!
+    description: String
     createdAt: DateTime!
     updatedAt: DateTime!
   }

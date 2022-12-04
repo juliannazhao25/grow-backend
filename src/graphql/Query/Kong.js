@@ -39,6 +39,7 @@ const logByHabitId = async (obj, { habitId }) => {
   return {
     habitId,
     habit: habit.habit,
+    description: habit.description,
     totalDays: tDays,
     successDays,
     streak: count,
@@ -83,6 +84,7 @@ const logsByUserId = async (obj, { userId }) => {
     logs.push({
       habitId,
       habit: habit.habit,
+      description: habit.description,
       totalDays: tDays,
       successDays,
       streak: count,
