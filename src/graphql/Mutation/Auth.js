@@ -15,7 +15,7 @@ const login = async (obj, { username, password }, { res }) => {
 
   const validPassword = await comparePassword(password, user.password)
   if (!validPassword) {
-    throw new UserInputError('Invalid email or password')
+    throw new UserInputError('Invalid username or password')
   }
 
 

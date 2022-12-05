@@ -11,6 +11,7 @@ scalar PhoneNumber
 
 type Query {
     user(id: ID!): User!
+    viewer: Viewer
     lawsByUserId(userId: ID!): [Law]!
     goalsByUserId(userId: ID!): [Goal]!
     habitsByUserId(userId: ID!): [Habit]!
