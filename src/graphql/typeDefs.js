@@ -16,7 +16,6 @@ type Query {
     goalsByUserId(userId: ID!): [Goal]!
     habitsByUserId(userId: ID!): [Habit]!
     logByHabitId(habitId: ID!): HabitDetails!
-    logsByUserId(userId: ID!): [HabitDetails]!
   }
 
   type Mutation {
@@ -98,6 +97,7 @@ type Query {
     habitId: ID!
     habit: String!
     description: String
+    doneToday: Boolean!
     totalDays: Int!
     successDays: Int!
     streak: Int!
