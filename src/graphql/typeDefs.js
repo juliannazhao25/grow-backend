@@ -97,6 +97,7 @@ type Query {
   type HabitDetails {
     habitId: ID!
     habit: String!
+    description: String
     totalDays: Int!
     successDays: Int!
     streak: Int!
