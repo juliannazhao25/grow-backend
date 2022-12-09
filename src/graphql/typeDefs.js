@@ -37,6 +37,7 @@ type Query {
   type User implements UserTraits {
     id: ID!
     username: String!
+    firstName: String!
     createdAt: DateTime!
     updatedAt: DateTime!
   }
@@ -44,6 +45,7 @@ type Query {
   type Viewer implements UserTraits {
     id: ID!
     username: String!
+    firstName: String!
     createdAt: DateTime!
     updatedAt: DateTime!
   }
