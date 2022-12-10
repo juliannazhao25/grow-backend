@@ -5,7 +5,7 @@ const Laws = require('../../models/Laws')
 const addGoal = async (obj, {
   userId, goal, reward, punishment, vermin1, vermin2, vermin3, vermin4, vermin5,
 }) => {
-  const added = Goals.query().insert({
+  const added = await Goals.query().insert({
     userId, goal, reward, punishment, vermin1, vermin2, vermin3, vermin4, vermin5,
   })
   return added.id
@@ -14,7 +14,7 @@ const addGoal = async (obj, {
 const addLaw = async (obj, {
   userId, law, punishment, reward,
 }) => {
-  const added = Laws.query().insert({
+  const added = await Laws.query().insert({
     userId, law, punishment, reward,
   })
   return added.id
