@@ -27,4 +27,4 @@ $ npm run dev
 **Figma:** [Here](https://www.figma.com/file/oymhCxJzErGWa29KbViBAs/GENED-1175-Final?node-id=0%3A1&t=s8Xx0FWVlM4kH5Wb-1)
 
 
-**Backend:** [Here](https://github.com/juliannazhao25/grow-frontend)
+**Frontend:** [Here](https://github.com/juliannazhao25/grow-frontend)
