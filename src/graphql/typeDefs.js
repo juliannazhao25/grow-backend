@@ -95,6 +95,11 @@ type Query {
     updatedAt: DateTime!
   }
 
+  type SingleLog {
+    date: String!
+    completed: Boolean!
+  }
+
   type HabitDetails {
     habitId: ID!
     habit: String!
@@ -103,6 +108,6 @@ type Query {
     totalDays: Int!
     successDays: Int!
     streak: Int!
-    lastMonth: [Date]!
+    lastMonth: [SingleLog]!
   }
 `

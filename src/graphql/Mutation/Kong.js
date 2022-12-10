@@ -5,7 +5,7 @@ const HabitLog = require('../../models/HabitLog')
 const addHabit = async (obj, {
   userId, habit, description,
 }) => {
-  const added = Habits.query().insert({
+  const added = await Habits.query().insert({
     userId, habit, description,
   })
   return added.id
@@ -14,7 +14,8 @@ const addHabit = async (obj, {
 const addHabitLog = async (obj, {
   habitId, date,
 }) => {
-  const added = HabitLog.query().insert({
+  date.setHours(date.getHours() + 12)
+  const added = await HabitLog.query().insert({
     habitId, date,
   })
   return added.id

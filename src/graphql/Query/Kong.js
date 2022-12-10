@@ -11,7 +11,7 @@ const logByHabitId = async (obj, { habitId }) => {
   const habit = await Habits.query().findById(habitId)
   const logToday = await HabitLog.query().where({ habitId }).where('date', today)
   let doneToday = false
-  if (logToday.length() !== 0) {
+  if (logToday.length !== 0) {
     doneToday = true
   }
   const log = await HabitLog.query()
@@ -23,21 +23,31 @@ const logByHabitId = async (obj, { habitId }) => {
   let streak = true
   let count = 0
   for (let i = 0; i < 30; ++i) {
+    const c = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`
     if (log.length > 0) {
       const current = log[log.length - 1]
-      if (`${current.date.getFullYear()}-${current.date.getMonth() + 1}-${current.date.getDate()}%` === `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}%`) {
+      if (`${current.date.getFullYear()}-${current.date.getMonth() + 1}-${current.date.getDate()}` === c) {
         // if (current.date === today) {
-        lastMonth.push(current.date)
+        lastMonth.push({
+          date: c,
+          completed: true,
+        })
         log.pop()
         if (streak) {
           count += 1
         }
       } else {
         streak = false
-        lastMonth.push(null)
+        lastMonth.push({
+          date: c,
+          completed: false,
+        })
       }
     } else {
-      lastMonth.push(null)
+      lastMonth.push({
+        date: c,
+        completed: false,
+      })
     }
     today.setHours(today.getHours() - 24)
   }
