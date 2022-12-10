@@ -15,11 +15,9 @@ const addHabitLog = async (obj, {
   habitId, date,
 }) => {
   date.setHours(date.getHours() + 12)
-  const today = new Date()
-  today.setHours(today.getHours() + 12)
   const added = await HabitLog.query().insert({
     habitId,
-    date: today,
+    date,
   })
   return added.id
 }
