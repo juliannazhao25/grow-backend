@@ -1,4 +1,4 @@
-# GenEd 1175 Final Project: Grow (Backend)
+# GenEd 1091 Final Project: Grow (Backend)
 ### An interactive and full-stack productivity website inspired by three famous Chinese philosophers: Confucius (Kongzi), Han Feizi, and Zhuangzi.
 
 
@@ -13,6 +13,8 @@ Many Chinese schools of thought tackle the issue of cultivation, whether it is o
 
 Of course, not all philosophies are the same (as we can see from more anti-Confucian variations of Legalism), so we designed and coded separate pages for each philosopher: a habit log based on the rituals and self-cultivation of Confucianism; a goal and law tracker for the regulation of oneself reminiscent of the harsh governance strategies of Legalism; and a meditation application that randomly generates one of three options to display, much like the go-with-the flow nature of Zhuangzi and Daoism.
 
+## Video Demo
+YouTube link: https://youtu.be/dALhlq6Z2HQ
 
 ## Running the project
 Clone this repo and the frontend repo that displays the website (found [here](https://github.com/juliannazhao25/grow-frontend)), and then run:
